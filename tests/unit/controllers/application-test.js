@@ -6,8 +6,10 @@ import {
 moduleFor('controller:application', {
 });
 
-// Replace this with your real tests.
-test('it exists', function(assert) {
+test('it has a default duringNextSteps value of false', function(assert) {
   var controller = this.subject();
-  assert.ok(controller);
+
+  var result = controller.get('duringNextSteps');
+
+  assert.equal(result, false);
 });

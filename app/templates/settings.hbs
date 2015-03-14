@@ -1,0 +1,22 @@
+<h3 class="partner-details">Technical Settings</h3>
+<p>Lastly we allow you to specify some exact technical settings if needed.</p>
+
+<form {{action "saveSettings" on="submit"}} class="settings-input">
+  <fieldset>
+    <div class="error">{{errorMessage}}</div>
+
+    <label>Unique HTML element id [optional]</label>
+    {{input class="tag-id-field" value=model.tagId}}
+    <div class="tip">
+      <em>Usually you can skip this</em> unless you are
+      <em>using more than one widget on your page of the same kind</em>.
+      Then you'll want to specify a unique element id for each widget when filling out this form for each.
+    </div>
+    <div class="tip">
+      This should be composed of lowercase letters and numbers separated by dashes.
+    </div>
+  </fieldset>
+
+  {{#ic-modal-trigger class="emph"}}Cancel{{/ic-modal-trigger}}
+  <input type="submit" value="Next"/>
+</form>

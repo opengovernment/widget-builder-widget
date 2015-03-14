@@ -8,4 +8,9 @@
   </header>
 
   {{outlet}}
+
+  {{#ic-modal id="next-steps" open-when=duringNextSteps on-close="backToStart"}}
+    {{#ic-modal-title}}<h2 class="next-step-headline">Enter further details</h2>{{/ic-modal-title}}
+    {{outlet 'next-steps'}}
+  {{/ic-modal}}
 </div>

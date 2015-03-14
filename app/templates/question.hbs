@@ -1,0 +1,38 @@
+<h3 class="question-suggestion">Suggest a question for people to ask</h3>
+
+{{#if selectedPerson.id}}
+  <div class="recipient-lead-in"><span class="emph">Question for:</span></div>
+  <div class="content-person-image">
+    {{cdn-avatar-from imageUrl=selectedPerson.photo_url height=30 width=30 class="official-image avatar-image"}}
+  </div>
+  <div class="content-person-info">
+    <span class="content-person-name">{{selectedPerson.full_name}}</span>
+    {{!-- commented out due to lack of space, keeping for reference --}}
+    <span class="content-person-short-description">{{!person-affiliation person=selectedPerson}}</span>
+  </div>
+{{/if}}
+
+<form {{action "saveQuestion" on="submit"}} class="question-input">
+  <fieldset>
+    <div class="error">{{errorMessage}}</div>
+
+    <label>Question title [optional]</label>
+
+    {{textarea value=model.summary class="summary-field" cols="30" rows="2" maxlength="100" placeholder="Short Summary..."}}
+
+    <label class="question-body-label">
+      Full Question [optional]
+    </label>
+
+    <div class="tip question">Why is this important?</div>
+
+    {{textarea value=model.body class="body-field" cols="30" rows="10" placeholder="Go on..."}}
+
+    <div class="tip question">
+      Add image or video links to show them. Twitter #hashtags work too.
+    </div>
+  </fieldset>
+
+  {{#ic-modal-trigger class="emph"}}Cancel{{/ic-modal-trigger}}
+  <input type="submit" value="Next"/>
+</form>

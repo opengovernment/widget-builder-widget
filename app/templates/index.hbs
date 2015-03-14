@@ -1,0 +1,20 @@
+<form class="widget-input-start">
+  <fieldset>
+    <div class="error">{{errorMessage}}</div>
+    <label>What should the headline of the widget be?</label>
+    {{input class="headline-field" value=model.headline placeholder="A Short Headline at the Top of the Widget"}}
+    <div class="tip">Can contain <em>simple</em> HTML tags for formatting like "em", etc.</div>
+
+    <fieldset class="without-button-to-end">
+      <label>What type of widget?</label>
+      {{#radio-button value="personWidget" groupValue=model.widgetType changed="nextStep"}}
+        Person
+      {{/radio-button}}
+      <div class="tip">Pre-chosen recipient for a question such as the page's author (must have twitter account) or an elected official</div>
+      {{#radio-button value="addressWidget" groupValue=model.widgetType changed="nextStep"}}
+        Address
+      {{/radio-button}}
+      <div class="tip">The user starts by entering an address or zip code to choose a recipient for the question</div>
+    </fieldset>
+  </fieldset>
+</form>

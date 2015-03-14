@@ -1,0 +1,23 @@
+<h3 class="partner-details">Partner info</h3>
+<p>It would be great to know a bit more about your organization or website so we can link back to it in the way you prefer.</p>
+
+<form {{action "savePartner" on="submit"}} class="partner-input">
+  <fieldset>
+    <div class="error">{{errorMessage}}</div>
+
+    <label>Website or Organization name [optional]</label>
+    {{input class="partner-name-field" value=model.name}}
+
+    <label>Website or Organization URL [optional]</label>
+    {{input class="partner-url-field" value=model.url placeholder="http://your-site.org"}}
+    <div class="tip">Usually the site's homepage, rather than a specific subpage that will host the widget.</div>
+
+    <label>Website or Organization logo image URL [optional]</label>
+    {{input class="partner-logo-field" value=model.logo placeholder="http://your-site.org/logo.png"}}
+    <div class="tip">A smallish version of your logo we can use on our site materials.</div>
+
+  </fieldset>
+
+  {{#ic-modal-trigger class="emph"}}Cancel{{/ic-modal-trigger}}
+  <input type="submit" value="Next"/>
+</form>

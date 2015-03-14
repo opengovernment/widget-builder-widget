@@ -1,0 +1,40 @@
+<h3 class="partner-details">Question recipient</h3>
+<p>Choose the author of the article or topic or an elected official on AskThem.io</p>
+
+<form {{action "lookUpPerson" on="submit"}} class="person-input">
+  <fieldset>
+    <div class="error">{{errorMessage}}</div>
+
+    <label>Twitter account</label>
+    {{input class="person-twitter-field" value=twitter_id placeholder="@janedoe"}}
+
+    <label>OR</label>
+
+    <label>AskThem.io Person ID</label>
+    {{input class="person-id-field" value=person_id}}
+    <div class="tip">If you know an elected official on the AskThem.io site,
+      you can find their Person ID from their page there.</div>
+
+    <div class="tip">E.g. Bernie Sander's page is
+      http://www.askthem.io/vt/people/S000033 and his ID is the 'S000033' at the
+      end.</div>
+
+  </fieldset>
+
+  {{#ic-modal-trigger class="emph"}}Cancel{{/ic-modal-trigger}}
+  <input type="submit" value="Lookup Person"/>
+</form>
+
+{{#if model.id}}
+  <h4>Selected Person:</h4>
+
+  <div class="person">
+    <div class="avatar">
+      {{cdn-avatar-from imageUrl=model.photo_url}}
+    </div>
+    {{person-details person=model}}
+  </div>
+
+  {{#link-to 'question' tagName="button" class="start"}}Next{{/link-to}}
+
+{{/if}}
