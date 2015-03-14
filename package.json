@@ -1,7 +1,7 @@
 {
   "name": "widget-builder-widget",
   "version": "0.0.0",
-  "description": "Small description for widget-builder-widget goes here",
+  "description": "A embeddedable widget for configuring other AskThem.io widgets via copy and paste of HTML",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -20,17 +20,23 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.0",
+    "ember-apijax": "0.2.1",
     "ember-cli": "0.2.0",
     "ember-cli-app-version": "0.3.2",
+    "ember-cli-askthem-person-details": "file:../../../../../var/folders/hg/klz90hy524v2m4prxvnnqvlw0000gn/T/npm-51880-ce283199/git-cache-34695da41b3d/2b2ca3f377d21a716e699a9dc9681beef78120af",
     "ember-cli-babel": "^4.0.0",
+    "ember-cli-betamax": "0.1.3",
     "ember-cli-content-security-policy": "0.3.0",
     "ember-cli-dependency-checker": "0.0.8",
     "ember-cli-htmlbars": "0.7.4",
     "ember-cli-ic-ajax": "0.1.1",
+    "ember-cli-ic-modal": "file:../../../../../var/folders/hg/klz90hy524v2m4prxvnnqvlw0000gn/T/npm-52053-20ab996e/git-cache-741438dc3f91/14ffa55984cb9e3def9fcdfb746b8ade31c7ab04",
     "ember-cli-inject-live-reload": "^1.3.0",
+    "ember-cli-make-concoction": "0.0.3",
+    "ember-cli-meta-options": "0.0.5",
     "ember-cli-qunit": "0.3.9",
     "ember-cli-uglify": "1.0.1",
-    "ember-data": "1.0.0-beta.15",
-    "ember-export-application-global": "^1.0.2"
+    "ember-export-application-global": "^1.0.2",
+    "ember-sanitize": "0.0.6"
   }
 }
