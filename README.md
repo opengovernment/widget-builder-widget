@@ -1,7 +1,14 @@
 # Widget-builder-widget
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is the basis for a third party widget for AskThem.io, it will be
+distributed via jQuery loader and multiple instances of the Ember app will be
+able to run on a page.
+
+This Ember.app is the basis for an embeddable widget that helps people
+set up AskThem.io other embeddable widgets!
+
+It's a form that sets up various AskThem.io widget options and outputs
+HTML that widget embedders can copy and paste.
 
 ## Prerequisites
 
@@ -17,8 +24,9 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * change into the new directory
-* `npm install`
-* `bower install`
+* `ember install`
+* answer "1" for ember#canary from the prompt from bower (after ember
+  1.12.0 is released, probably a good idea to switch to standard ember releases)
 
 ## Running / Development
 
@@ -41,7 +49,12 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+In the case of AskThem.io, this is a manual process right now. I'll write a post
+about it at some point.
+
+Otherwise the deployment should be fairly standard. Just remember to set up
+your configuration via meta tags on the host page. See app/index.html and
+tests/index.html for example configuration.
 
 ## Further Reading / Useful Links
 
@@ -51,3 +64,10 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
+## Credits
+
+Originally developed by [Walter Mcginnis](https://github.com/walter).
+
+This ember-cli add-on was built as a part of widget work for http://askthem.io.
+
+Thanks to the Ember.js, ember-cli, and Broccoli teams for excellent work.
