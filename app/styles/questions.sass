@@ -1,0 +1,110 @@
+.at-widget
+  .recipient-lead-in, .content-person-image, .content-person-info
+    display: inline-block
+  .emph
+    padding: 0 3px
+    display: inline-block
+    border: 1px solid #dfdfdf
+    +border-radius(3px)
+    background-color: #efefef
+    font-weight: 600
+    color: #818181
+    line-height: 1.5em
+  .official-image
+    margin-left: .75em
+    position: relative
+    top: .75em
+  .avatar-image
+    +border-radius(50%)
+  .content-person-info
+    margin-left: .75em
+    line-height: 1.25em
+    color: $middleblue
+  .question-body-label
+    margin-top: 6px
+    display: block
+    font:
+      size: 0.889em
+      weight: normal
+    line-height: 1.5em
+    color: $middleblue
+  .question-step-headline
+    +RobotoBlack
+    font-size: 1.5em
+    margin: 0
+  form.question-input
+    input[type=submit],input[type=text],input[type=email],input[type=password],input[type=number], textarea
+      font:
+        family: helvetica, arial, verdana, sans-serif
+        weight: 200
+        size: 1em
+      border: 1px solid #dde3e1
+      line-height: 1.5em
+      height: 42px
+      text-indent: 10px
+      text-align: left
+      +border-radius(3px)
+      width: 100%
+      &:focus
+        border-color: #82ccd7
+        outline: none
+        text-indent: 12px
+    input[type=submit]
+      width: auto
+      text-indent: 0
+      text-align: center
+      margin:
+        bottom: 1em
+      &:focus
+        border-color: #82ccd7
+        outline: none
+        text-indent: 0
+    textarea
+      padding:
+        top: 8px
+        right: 12px
+        left: 10px
+      text-indent: 0
+      &:focus
+        padding-left: 12px
+        text-indent: 0
+    .title-input
+      height: 3em
+    .body-input
+      height: 6em
+    label
+      margin-bottom: 12px
+      display: block
+      font:
+        size: 1.125em
+        weight: 600
+      line-height: 1em
+      color: $darkblue
+    fieldset
+      margin:
+        top: 18px
+        bottom: 42px
+      padding-top: 18px
+      border-top: 1px solid #EFEFEF
+      &.last
+        margin-bottom: 0
+      input[type=text],input[type=email],input[type=password],input[type=number], textarea
+        margin-bottom: 12px
+        max-width: 360px
+    label
+      margin:
+        top: 12px
+        bottom: 6px
+      font:
+        size: 0.813em
+        weight: 600
+      line-height: 1.385em
+    .tip
+      font:
+        size: 0.75em
+        weight: bold
+      line-height: 1.5em
+      color: $middleblue
+      text-align: center
+    .error
+      color: #F86369

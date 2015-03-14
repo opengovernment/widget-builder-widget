@@ -1,0 +1,50 @@
+.at-widget
+  div.attr
+    span.attr
+      color: $lightblue
+      display: inline-block
+      margin-right: 20px
+      font-size: 0.813em
+      line-height: 1.385em
+      &:last-child
+        margin-right: 0
+
+  div.avatar
+    +border-radius(30px)
+    display: inline-block
+    overflow: hidden
+    width: 100%
+    img
+      float: left
+      width: 100%
+      height: auto
+
+  .person div.avatar
+    max-width: 60px
+    vertical-align: top
+
+  .person .avatar
+    width: 60px
+    height: 60px
+
+  .person
+    padding-bottom: 30px
+    div.person-info
+      display: inline-block
+      h2
+        color: #3b626c
+        display: inline-block
+        +RobotoRegular
+        font-size: 1.125em
+        line-height: 1.333em
+        a
+          color: #3c636e
+          &:hover
+            color: $linkhover
+      .jurisdiction
+        color: $middlegrey
+        display: inline-block
+        font-size: 0.813em
+        +Helvetica
+        font-weight: 100
+        line-height: 1.385em
