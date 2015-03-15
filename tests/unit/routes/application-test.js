@@ -4,7 +4,7 @@ import {
 } from 'ember-qunit';
 
 moduleFor('route:application', {
-  needs: ['controller:application']
+  needs: ['controller:application', 'controller:index']
 });
 
 test('backToStart transitions to application route',
