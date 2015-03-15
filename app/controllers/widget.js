@@ -6,7 +6,6 @@ export default Ember.Controller.extend({
   model: Ember.computed.alias('controllers.application.widget'),
   code: function() {
     var code = '',
-        widgetType = this.get('model.widgetType'),
         headline = this.get('model.headline'),
         question = this.get('model.question'),
         partner = this.get('model.partner'),
