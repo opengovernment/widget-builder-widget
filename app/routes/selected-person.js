@@ -8,7 +8,7 @@ export default Ember.Route.extend({
         person_id = this.controllerFor('person').get('person_id');
 
     if (Ember.isEmpty(person_id)) {
-      params = { 'twitter_id': twitter_id };
+      params = { 'twitter_id': twitter_id.replace('@', '') };
     } else {
       params = { 'person_id': person_id };
     }
