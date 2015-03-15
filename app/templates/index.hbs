@@ -17,4 +17,8 @@
       <div class="tip">The user starts by entering an address or zip code to choose a recipient for the question</div>
     </fieldset>
   </fieldset>
+
+  {{#if errorMessage}}
+    <button {{action 'backToStart'}} class="start">Clear and start again</button>
+  {{/if}}
 </form>
