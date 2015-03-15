@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     saveQuestion: function() {
       this.transitionTo('partner');
 
-      return false;
+      return true;
     }
   }
 });

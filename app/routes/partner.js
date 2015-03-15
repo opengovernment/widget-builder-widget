@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     savePartner: function() {
       this.transitionTo('settings');
 
-      return false;
+      return true;
     }
   }
 });

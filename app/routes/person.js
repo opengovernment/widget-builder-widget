@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     lookUpPerson: function() {
       this.transitionTo('selected-person');
 
-      return false;
+      return true;
     }
   }
 });

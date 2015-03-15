@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     saveSettings: function() {
       this.transitionTo('widget');
 
-      return false;
+      return true;
     }
   }
 });

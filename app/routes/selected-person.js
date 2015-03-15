@@ -20,6 +20,7 @@ export default Ember.Route.extend({
     this._super(controller, model);
 
     if (model.length > 0) {
+      this.controllerFor('selected-person').set('errorMessage', null);
       this.controllerFor('application').set('widget.person', model.objectAt(0));
     } else {
       this.controllerFor('selected-person')
@@ -35,7 +36,7 @@ export default Ember.Route.extend({
     savePerson: function() {
       this.transitionTo('question');
 
-      return false;
+      return true;
     }
   }
 });
