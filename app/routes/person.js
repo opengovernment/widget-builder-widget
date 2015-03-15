@@ -6,8 +6,8 @@ export default Ember.Route.extend({
     this.render({ into: 'application', outlet: 'next-steps' });
   },
   actions: {
-    savePerson: function() {
-      this.transitionTo('question');
+    lookUpPerson: function() {
+      this.transitionTo('selected-person');
 
       return false;
     }

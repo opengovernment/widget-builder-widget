@@ -1,4 +1,4 @@
-<h3 class="partner-details">Question recipient</h3>
+<h3 class="person-details">Question recipient</h3>
 <p>Choose the author of the article or topic or an elected official on AskThem.io</p>
 
 <form {{action "lookUpPerson" on="submit"}} class="person-input">
@@ -24,17 +24,3 @@
   {{#ic-modal-trigger class="emph"}}Cancel{{/ic-modal-trigger}}
   <input type="submit" value="Lookup Person"/>
 </form>
-
-{{#if model.id}}
-  <h4>Selected Person:</h4>
-
-  <div class="person">
-    <div class="avatar">
-      {{cdn-avatar-from imageUrl=model.photo_url}}
-    </div>
-    {{person-details person=model}}
-  </div>
-
-  {{#link-to 'question' tagName="button" class="start"}}Next{{/link-to}}
-
-{{/if}}

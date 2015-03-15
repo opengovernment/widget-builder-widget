@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('question');
   this.route('partner');
   this.route('person');
+  this.route('selected-person');
   this.route('settings');
   this.route('widget');
 });

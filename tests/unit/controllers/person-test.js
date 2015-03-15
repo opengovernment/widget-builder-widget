@@ -4,16 +4,36 @@ import {
 } from 'ember-qunit';
 
 moduleFor('controller:person', {
-  needs: ['controller:application']
 });
 
-test('it has same model as application controller widget.person', function(assert) {
-  var controller = this.subject(),
-      applicationController = controller.get('controllers.application'),
-      person = { 'full_name': 'blart' };
+test('it isValid if either twitter_id or person_id are set', function(assert) {
+  var controller = this.subject();
 
-  applicationController.set('widget', { person: person });
+  controller.set('twitter_id', 'lessig');
 
-  assert.equal(controller.get('model'),
-               applicationController.get('widget.person'));
+  assert.ok(controller.get('isValid'));
+});
+
+test('not isValid if no twitter_id or person_id are set', function(assert) {
+  var controller = this.subject();
+
+  assert.ok(!controller.get('isValid'));
+});
+
+test('lookUpPerson sets error message if not isValid', function(assert) {
+  var controller = this.subject();
+
+  controller.send('lookUpPerson');
+
+  assert.ok(controller.get('errorMessage'));
+});
+
+test('lookUpPerson does not set error message if isValid', function(assert) {
+  var controller = this.subject();
+
+  controller.set('twitter_id', 'lessig');
+
+  controller.send('lookUpPerson');
+
+  assert.ok(!controller.get('errorMessage'));
 });
