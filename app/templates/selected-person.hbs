@@ -1,11 +1,13 @@
-<h3 class="person-details">Selected Person:</h3>
+<div class="select-person-display">
+  <h3 class="person-details">Selected Person:</h3>
 
-<div class="person">
-  <div class="avatar">
-    {{cdn-avatar-from imageUrl=selectedPerson.photo_url}}
+  <div class="person">
+    <div class="avatar">
+      {{cdn-avatar-from imageUrl=selectedPerson.photo_url}}
+    </div>
+    {{person-details person=selectedPerson}}
   </div>
-  {{person-details person=selectedPerson}}
-</div>
 
-{{#ic-modal-trigger class="emph"}}Cancel{{/ic-modal-trigger}}
-<button {{action 'savePerson'}} class="start">Next</button>
+  {{#ic-modal-trigger class="emph"}}Cancel{{/ic-modal-trigger}}
+  <button {{action 'savePerson'}} class="start">Next</button>
+</div>
