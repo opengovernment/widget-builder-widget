@@ -4,12 +4,12 @@ export default Ember.Controller.extend({
   person_id: null,
   twitter_id: null,
   errorMessage: null,
-  isValid: function() {
+  isValid: Ember.computed('twitter_id', 'person_id', function() {
     var twitter_id = this.get('twitter_id'),
         person_id = this.get('person_id');
 
     return (!Ember.isEmpty(twitter_id) || !Ember.isEmpty(person_id));
-  }.property('twitter_id', 'person_id'),
+  }),
   actions: {
     lookUpPerson: function() {
       if (!this.get('isValid')) {

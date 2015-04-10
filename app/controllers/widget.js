@@ -4,7 +4,7 @@ import config from '../config/environment';
 export default Ember.Controller.extend({
   needs: ['application'],
   model: Ember.computed.alias('controllers.application.widget'),
-  code: function() {
+  code: Ember.computed('model', function() {
     var code = '',
         headline = this.get('model.headline'),
         question = this.get('model.question'),
@@ -21,8 +21,8 @@ export default Ember.Controller.extend({
     code = code + '</div>';
 
     return code;
-  }.property('model'),
-  _widgetUrl: function() {
+  }),
+  _widgetUrl: Ember.computed('model.widgetType', function() {
     var _widgetUrl;
 
     if (this.get('model.widgetType') === 'addressWidget') {
@@ -32,10 +32,10 @@ export default Ember.Controller.extend({
     }
 
     return _widgetUrl;
-  }.property('model.widgetType'),
+  }),
   _addressWidgetUrl: config.APP.askThemHost + '/widgets/address/widget.js',
   _personWidgetUrl: config.APP.askThemHost + '/widgets/person/widget.js',
-  _tagIdOrGenerate: function() {
+  _tagIdOrGenerate: Ember.computed('model.settings', 'model.widgetType', function() {
     var settings = this.get('model.settings'),
         tagId = '';
 
@@ -47,7 +47,7 @@ export default Ember.Controller.extend({
     }
 
     return tagId;
-  }.property('model.settings', 'model.widgetType'),
+  }),
   _loaderTag: function(tagId) {
     var tag = '<script class="at-widget-loader"';
 
