@@ -12,13 +12,12 @@ export default Ember.Controller.extend({
         person = this.get('model.person'),
         tagId = this.get('_tagIdOrGenerate');
 
-    code = this._loaderTag(tagId);
-    code = code + this._openDivForAttributes(tagId);
-    code = code + this._attributeDivFor('headline', headline);
+    code = this._loaderTagOpen(tagId);
+    code = code + this._attributeDataFor('headline', headline);
     code = code + this._attrsDivsFrom(question, 'question');
     code = code + this._attrsDivsFrom(partner, 'partner');
     code = code + this._attrsDivsFrom(person, 'person');
-    code = code + '</div>';
+    code = code + ' async></script>';
 
     return code;
   }),
@@ -48,22 +47,16 @@ export default Ember.Controller.extend({
 
     return tagId;
   }),
-  _loaderTag: function(tagId) {
+  _loaderTagOpen: function(tagId) {
     var tag = '<script class="at-widget-loader"';
 
     tag = tag + ' src="' + this.get('_widgetUrl') + '" ';
     tag = tag + 'data-tag-id="' + tagId +'" ';
-    tag = tag + 'type="text/javascript" async></script>' + '\n';
+    tag = tag + 'type="text/javascript"' + '\n';
     return tag;
   },
-  _openDivForAttributes: function(tagId) {
-    var tag = '<div style="display: none;" ';
-    tag = tag + 'data-tag-id="' + tagId +'" class="at-widget-attributes">\n';
-    return tag;
-  },
-  _attributeDivFor: function(name, value) {
-    var attrHtml = '<div class="' + name + '">';
-    attrHtml = attrHtml + value + '</div>\n';
+  _attributeDataFor: function(name, value) {
+    var attrHtml = ' data-' + name + '="' + value + '"\n';
     return attrHtml;
   },
   _attrsDivsFrom: function(obj, prefix) {
@@ -73,7 +66,7 @@ export default Ember.Controller.extend({
         var value = obj[property];
 
         if (!Ember.isEmpty(value)) {
-          divs = divs + this._attributeDivFor(prefix + '-' + property, value);
+          divs = divs + this._attributeDataFor(prefix + '-' + property, value);
         }
       }
     }

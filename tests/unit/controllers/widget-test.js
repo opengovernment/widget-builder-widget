@@ -32,7 +32,7 @@ test('code, given a populated widget, outputs correspondng javascript and html',
 
   applicationController.set('widget', widget);
 
-  var expected = '<script class="at-widget-loader" src="askthem.dev/widgets/address/widget.js" data-tag-id="blart" type="text/javascript" async></script>\n<div style="display: none;" data-tag-id="blart" class="at-widget-attributes">\n<div class="headline">it is late!</div>\n<div class="question-summary">and i am getting sleepy?</div>\n<div class="partner-name">bye george</div>\n<div class=\"person-id\">1</div>\n</div>';
+  var expected = '<script class="at-widget-loader" src="askthem.dev/widgets/address/widget.js" data-tag-id="blart" type="text/javascript"\n data-headline="it is late!"\n data-question-summary="and i am getting sleepy?"\n data-partner-name="bye george"\n data-person-id="1"\n async></script>';
 
   assert.equal(controller.get('code'), expected);
 });

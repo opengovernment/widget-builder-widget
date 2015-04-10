@@ -32,7 +32,7 @@ test('when partner form is filled out, ', function(assert) {
 
   click('input[type="submit"]');
 
-  var expected = '<script class="at-widget-loader" src="askthem.dev/widgets/address/widget.js" data-tag-id="widget-123" type="text/javascript" async></script>\n<div style="display: none;" data-tag-id="widget-123" class="at-widget-attributes">\n<div class="headline">A HEADLINE</div>\n<div class="question-summary">QUESTION_SUMMARY</div>\n<div class="partner-name">PARTNER_NAME</div>\n</div>';
+  var expected = '<script class="at-widget-loader" src="askthem.dev/widgets/address/widget.js" data-tag-id="widget-123" type="text/javascript"\n data-headline="A HEADLINE"\n data-question-summary="QUESTION_SUMMARY"\n data-partner-name="PARTNER_NAME"\n async></script>';
 
   andThen(function() {
     assert.equal(find('.code-output').val(), expected);
