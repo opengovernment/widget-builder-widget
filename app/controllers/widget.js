@@ -32,8 +32,8 @@ export default Ember.Controller.extend({
 
     return _widgetUrl;
   }),
-  _addressWidgetUrl: config.APP.askThemHost + '/widgets/address/widget.js',
-  _personWidgetUrl: config.APP.askThemHost + '/widgets/person/widget.js',
+  _addressWidgetUrl: '//' + config.APP.askThemHost + '/widgets/address/widget.js',
+  _personWidgetUrl: '//' + config.APP.askThemHost + '/widgets/person/widget.js',
   _tagIdOrGenerate: Ember.computed('model.settings', 'model.widgetType', function() {
     var settings = this.get('model.settings'),
         tagId = '';
